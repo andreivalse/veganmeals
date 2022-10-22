@@ -1,0 +1,94 @@
+
+
+
+/* body */
+.carrousel {
+    border: 1px solid #809A6F;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%
+
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.destacados {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/* .destacados1 {
+} */
+.destacado2 {
+    padding-left: 2%;
+}
+.destacado3 {
+    padding-left: 2%;
+}
+
+.categorias {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+.frescos {
+    width: 150px;
+    height: auto;}
+
+.congelados {
+    width: 150px;
+    height: auto;}
+
+.viandas {
+    width: 150px;
+    height: auto;}
+
+.harinas {
+    width: 150px;
+    height: auto;}
+
+
+    @media (max-width: 720px){
+    
+
+        .cabecera .menu{
+         display: none;
+         padding-left: 3rem;
+         padding-right: 3rem;
+        }
+     
+        .cart{
+         display: none;
+        }
+     
+        .burger-menu{
+         display: flex;
+         justify-content: end;
+         margin-top: 2rem;
+         
+        }
+         .fa-bars{
+             color: white;
+             font-size: 4rem;
+             margin-right: 2rem;
+     
+         }.contenedor_destacados{
+            display: grid;
+            flex-direction: column;
+            justify-items: center;
+         }
+
+         .destacados{
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            width: 300px;
+         }
+
+       
+     
+     }

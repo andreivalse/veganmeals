@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Page head -->
+<%- include('../partials/head') %>
+
+  <body>
+    <!-- header -->
+
+    <%- include('../partials/header') %>
+      <!-- Page content -->
+ 
+        
+         
+  <% if (user && user.Admin == true) { %>
+      <div class="anadir-flex">
+            <a href="/product/nuevoProducto" class="anadir">Añadir Producto </a>
+      </div> 
+      <% } %>
+
+      
+      <main>
+        
+        <div class="container">
+
+          <% for(let index=0; index < products.length; index++) { %>
+            <div class="cuadrado_contenedor">
+              <div class="productos_flex">
+                <a href="/product/<%= products[index].id %>">
+
+                  <h4 id="nombre">
+                    <%= products[index].nombre %>
+                  </h4>
+                </a>
+                <p class="contenedor_precio">
+                  <label for="precio" class="precio">USD $ </label>
+                  <%= products[index].precio %>
+                </p>
+                <img class="product-img" id="img" src="/images/<%= products[index].image %>" width="150px">
+              </img>
+              </div>
+
+                <!-- eliminar producto -->
+            <% if (user && user.Admin == true) { %>
+              <form action="/product/<%= products[index].id %>?_method=DELETE" method="post">
+                <button type="submit" class="boton_eliminar">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button> <a href="/product/modificarProducto/<%= products[index].id %>" class="boton_eliminar">
+                  <i class="fa-solid fa-pen-to-square"></i></a> 
+              </form>
+            <% } %>  
+            
+            
+              
+              
+
+            </div>          
+
+          <% } %>
+        </div>
+
+
+
+      </main>
+      <%- include('../partials/footer') %>
+  </body>
+  <script src="/js/productos.js"></script>
+</html>
